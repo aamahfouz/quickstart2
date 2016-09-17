@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 
+@include('common.error')
+
 <form action="{{ url('tasks')}}" method="POST">
 	{{ csrf_field() }}
 	<label>Task</label>
