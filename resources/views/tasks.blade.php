@@ -13,7 +13,14 @@
 @foreach ($allTasks as $task)
 <br>
 <tr>
-	<td> {{$task->name}} </td>
+	<td class="table-text"> {{$task->name}} </td>
+	<td>
+		<form action="/tasks/{{$task->id}}" method="POST">
+			{{csrf_field()}}
+			{{method_field('DELETE')}}
+			<button>Delete Task</button>
+		</form>
+	</td>
 </tr>
 <br>
 @endforeach
